@@ -29,7 +29,7 @@ app.post('/signin', async(req, res) => { handleSignin(req, res, db, bcrypt) })
 app.post('/register', (req, res) => { handleRegister(req, res, db, bcrypt) })
 app.get('/profile/:userId', (req, res) => { handleGetProfile(req, res, db) })
 app.put('/image', (req, res) => { handleImage(req, res, db) })
-
+app.get('/', (req, res) => { res.send('bekerja brow') })
 
 
 app.listen(process.env.PORT || 3000, () => {
