@@ -1,5 +1,5 @@
 import express from 'express';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcrypt-nodejs';
 import cors from 'cors';
 import { nanoid } from 'nanoid';
 import knex from 'knex';
