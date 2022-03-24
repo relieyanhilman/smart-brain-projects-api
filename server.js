@@ -32,7 +32,7 @@ app.get('/profile/:userId', (req, res) => { handleGetProfile(req, res, db) })
 app.put('/image', (req, res) => { handleImage(req, res, db) })
 app.get('/', (req, res) => { res.send('bekerja brow') })
 
-const PORT = process.env.PORT | 3000
+const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
     console.log(`app listen on port ${PORT}`)
 })
