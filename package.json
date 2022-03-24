@@ -1,32 +1,23 @@
 {
-    "name": "smart_brain_api",
+    "name": "node",
     "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "type": "module",
-    "engines": {
-        "npm": "8.1.2",
-        "node": "16.13.1"
-    },
+    "main": "script.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-
+        "start": "nodemon server.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "bcrypt": "^5.0.1",
-        "clarifai": "^2.9.1",
+        "bcrypt-nodejs": "0.0.3",
+        "body-parser": "^1.19.0",
         "cors": "^2.8.5",
-        "express": "^4.17.2",
-        "knex": "^0.95.15",
-        "nanoid": "^3.1.30",
-        "node-fetch": "^3.2.0",
+        "express": "^4.17.1",
+        "knex": "^1.0.1",
         "pg": "^8.7.1"
     },
     "devDependencies": {
-        "nodemon": "^2.0.15"
-    }
-
+        "nodemon": "^2.0.14"
+    },
+    "description": ""
 }
