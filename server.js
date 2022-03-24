@@ -21,9 +21,10 @@ const db = knex({
 
 const app = express();
 
+app.use(cors())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json());
-app.use(cors())
+
 
 app.post('/signin', async(req, res) => { handleSignin(req, res, db, bcrypt) })
 app.post('/register', (req, res) => { handleRegister(req, res, db, bcrypt) })
@@ -31,9 +32,9 @@ app.get('/profile/:userId', (req, res) => { handleGetProfile(req, res, db) })
 app.put('/image', (req, res) => { handleImage(req, res, db) })
 app.get('/', (req, res) => { res.send('bekerja brow') })
 
-
-app.listen(process.env.PORT || 3000, () => {
-    console.log(`app listen on port ${process.env.PORT}`)
+const PORT = process.env.PORT | 3000
+app.listen(PORT, () => {
+    console.log(`app listen on port ${PORT}`)
 })
 
 /*
