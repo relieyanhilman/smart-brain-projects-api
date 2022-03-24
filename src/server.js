@@ -3,10 +3,10 @@ import bcrypt from 'bcrypt';
 import cors from 'cors';
 import { nanoid } from 'nanoid';
 import knex from 'knex';
-import { handleRegister } from './controllers/register.js';
-import { handleSignin } from './controllers/signin.js';
-import { handleGetProfile } from './controllers/getProfile.js';
-import { handleImage } from './controllers/image.js';
+import { handleRegister } from '../controllers/register.js';
+import { handleSignin } from '../controllers/signin.js';
+import { handleGetProfile } from '../controllers/getProfile.js';
+import { handleImage } from '../controllers/image.js';
 const db = knex({
     client: 'pg',
     connection: {
