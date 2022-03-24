@@ -69,7 +69,7 @@ app.use(cors())
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send(database.users);
+    res.send('beyblade gila');
 })
 
 app.post('/signin', (req, res) => {
