@@ -56,7 +56,7 @@ const knex = require('knex')
 const db = knex({
     client: 'pg',
     connection: {
-        connectionString: 'postgresql-rigid-52606',
+        connectionString: process.env.DATABASE_URL,
         ssl: true
     }
 });
