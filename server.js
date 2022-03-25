@@ -54,19 +54,24 @@ const cors = require('cors');
 const knex = require('knex')
 
 const db = knex({
+    // Enter your own database information here based on what you created
     client: 'pg',
     connection: {
-        connectionString: process.env.DATABASE_URL,
-        ssl: true
+        host: '127.0.0.1',
+        user: 'postgres',
+        password: 'password',
+        database: 'smart-brain'
     }
 });
 
 const app = express();
+
 app.use(cors())
-app.use(express.json());
+app.use(express.json()); // latest version of exressJS now comes with Body-Parser!
+
 
 app.get('/', (req, res) => {
-    res.send('beyblade');
+    res.send(database.users);
 })
 
 app.post('/signin', (req, res) => {
@@ -89,10 +94,8 @@ app.post('/signin', (req, res) => {
 })
 
 app.post('/register', (req, res) => {
-    console.log('beyblade1')
     const { email, name, password } = req.body;
     const hash = bcrypt.hashSync(password);
-    console.log('beyblade2')
     db.transaction(trx => {
             trx.insert({
                     hash: hash,
@@ -150,6 +153,6 @@ app.put('/image', (req, res) => {
         .catch(err => res.status(400).json('unable to get entries'))
 })
 
-app.listen(process.env.PORT, () => {
-    console.log(`app is running on port ${process.env.PORT}`);
+app.listen(3000, () => {
+    console.log('app is running on port 3000');
 })
