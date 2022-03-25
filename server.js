@@ -71,7 +71,7 @@ app.use(express.json()); // latest version of exressJS now comes with Body-Parse
 
 
 app.get('/', (req, res) => {
-    res.send(database.users);
+    res.send('beyblade');
 })
 
 app.post('/signin', (req, res) => {
