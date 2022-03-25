@@ -89,8 +89,10 @@ app.post('/signin', (req, res) => {
 })
 
 app.post('/register', (req, res) => {
+    console.log('beyblade1')
     const { email, name, password } = req.body;
     const hash = bcrypt.hashSync(password);
+    console.log('beyblade2')
     db.transaction(trx => {
             trx.insert({
                     hash: hash,
